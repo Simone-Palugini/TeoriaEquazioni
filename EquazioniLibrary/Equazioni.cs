@@ -18,6 +18,5 @@ namespace EquazioniLibrary
             return risposta;
         }
 
- 
     }
 }
