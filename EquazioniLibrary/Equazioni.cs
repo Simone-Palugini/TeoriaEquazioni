@@ -14,6 +14,7 @@ namespace EquazioniLibrary
             if (a == 0)
             {
                 risposta = false;
+
             }
             return risposta;
         }
