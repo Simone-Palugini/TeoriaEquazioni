@@ -18,5 +18,9 @@ namespace EquazioniLibrary
             return risposta;
         }
 
+        public static bool IsImpossible(double a)
+        {
+            return false;
+        }
     }
 }
