@@ -19,10 +19,10 @@ namespace EquazioniLibrary
             return risposta;
         }
 
-        public static bool IsInconsisted(double a)
+        public static bool IsInconsisted(double a, double b)
         {
             bool risposta = false;
-            if (a == 0)
+            if (a == 0 && b==0)
             {
                 risposta = true;
             }
