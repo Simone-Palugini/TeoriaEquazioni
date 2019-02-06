@@ -19,7 +19,17 @@ namespace EquazioniLibrary
             return risposta;
         }
 
-        public static bool IsImpossible(double a)
+        public static bool IsInconsisted(double a)
+        {
+            bool risposta = false;
+            if (a == 0)
+            {
+                risposta = true;
+            }
+            return risposta;
+        }
+
+        public static bool IsIndetermined(double a, double b)
         {
             return false;
         }
