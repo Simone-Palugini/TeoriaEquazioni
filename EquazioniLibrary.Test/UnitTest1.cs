@@ -162,7 +162,6 @@ namespace EquazioniLibrary.Test
         }
 
         //test per equazione indeterminata
-
         [TestMethod]
         public void TestIsIndetermined1()
         {
@@ -205,6 +204,34 @@ namespace EquazioniLibrary.Test
             double a = 0, b = -3;
             bool RespAttesa = true;
             bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        //test equazione di secondo grado
+        [TestMethod]
+        public void TestIsDegree2_1()
+        {
+            double a = 0;
+            bool RespAttesa = false;
+            bool Resp = Equazioni.IsDegree2(a);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsDegree2_2()
+        {
+            double a = -3;
+            bool RespAttesa = true;
+            bool Resp = Equazioni.IsDegree2(a);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsDegree2_3()
+        {
+            double a = 3;
+            bool RespAttesa = true;
+            bool Resp = Equazioni.IsDegree2(a);
             Assert.AreEqual(RespAttesa, Resp);
         }
     }
