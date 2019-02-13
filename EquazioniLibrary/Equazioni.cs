@@ -22,7 +22,7 @@ namespace EquazioniLibrary
         public static bool IsInconsisted(double a, double b)
         {
             bool risposta = false;
-            if (a == 0 && b==0)
+            if (a == 0 && b == 0)
             {
                 risposta = true;
             }
@@ -31,7 +31,12 @@ namespace EquazioniLibrary
 
         public static bool IsIndetermined(double a, double b)
         {
-            return false;
+            bool risposta = false;
+            if (a / b == 0)
+            {
+                risposta = true;
+            }
+            return risposta;
         }
     }
 }

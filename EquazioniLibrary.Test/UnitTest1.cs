@@ -152,9 +152,64 @@ namespace EquazioniLibrary.Test
             Assert.AreEqual(RespAttesa, Resp);
         }
 
-    }
+        [TestMethod]
+        public void TestIsInconsisted14()
+        {
+            double a = -2, b = 3;
+            bool RespAttesa = false;
+            bool Resp = Equazioni.IsInconsisted(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
 
         //test per equazione indeterminata
 
-    
+        [TestMethod]
+        public void TestIsIndetermined1()
+        {
+            double a = 3, b = 0;
+            bool RespAttesa = false;
+            bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsIndetermined2()
+        {
+            double a = -3, b = 0;
+            bool RespAttesa = false;
+            bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsIndetermined3()
+        {
+            double a = 0, b = 0;
+            bool RespAttesa = false;
+            bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsIndetermined4()
+        {
+            double a = 0, b = 3;
+            bool RespAttesa = true;
+            bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+
+        [TestMethod]
+        public void TestIsIndetermined5()
+        {
+            double a = 0, b = -3;
+            bool RespAttesa = true;
+            bool Resp = Equazioni.IsIndetermined(a, b);
+            Assert.AreEqual(RespAttesa, Resp);
+        }
+    }
+
+
+
+
 }
