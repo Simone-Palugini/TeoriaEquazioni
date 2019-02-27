@@ -24,7 +24,7 @@ namespace EquazioniLibrary
         public static bool IsInconsisted(double a, double b)
         {
             bool risposta = false;
-            if (a == 0 && b == 0)
+            if (a == 0 && b != 0)
             {
                 risposta = true;
             }
@@ -35,22 +35,64 @@ namespace EquazioniLibrary
         public static bool IsIndetermined(double a, double b)
         {
             bool risposta = false;
-            if (a / b == 0)
+            if (a == 0 && b == 0)
             {
                 risposta = true;
             }
             return risposta;
         }
 
-        //metodo equazione di secondo grado
-        public static bool IsDegree2(double a)
+        //metodo equazione di 2° grado
+        public static string IsDegree2(double a, double b)
         {
-            bool risposta = true;
-            if (a == 0)
+            double risultato = 0;
+            string risposta = "";
+            if (IsInconsisted(a, b))
             {
-                risposta = false;
+                risposta = "impossibile";
+            }
+            else if (IsIndetermined(a, b))
+            {
+                risposta = "indeterminata";
+            }
+            else
+            {
+                risultato = b / a;
+                risposta = $"{risultato.ToString()}";
             }
             return risposta;
         }
-    }
+
+        //metodo calcolo del delta
+        public static double Delta(double a, double b, double c)
+        {
+            double risultato;
+            risultato = (b * b) - (4 * c * a);
+
+            return risultato;
+        }
+
+        // metodo equazione di 1° grado
+        public static string EquationDegree1(double a, double b)
+        {
+            double risultato = 0;
+            string risposta = "";
+
+            if (IsInconsisted(a, b))
+            {
+                risposta = "impossibile";
+            }
+            else if (IsIndetermined(a, b))
+            {
+                risposta = "indeterminata";
+            }
+            else
+            {
+                risultato = -b / a;
+                risposta = $"{risultato.ToString()}";
+            }
+
+            return risposta;
+        }
+    }   
 }
